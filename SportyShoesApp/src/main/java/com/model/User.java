@@ -1,5 +1,7 @@
 package com.model;
 
+import java.time.LocalDate;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,6 +15,7 @@ private int id;
 	private String email;
 	private String name;
 	private String password;
+	private LocalDate registeredAt = LocalDate.now();
 	public int getId() {
 		return id;
 	}
@@ -36,6 +39,12 @@ private int id;
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	public LocalDate getRegisteredAt() {
+		return registeredAt;
+	}
+	public void setRegisteredAt(LocalDate registeredAt) {
+		this.registeredAt = registeredAt;
 	}
 	
 }
