@@ -1,10 +1,10 @@
-package com.main.SportyShoesApp;
+package com.main;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SportyShoesAppApplicationTests {
+class SportyShoesApplicationTests {
 
 	@Test
 	void contextLoads() {

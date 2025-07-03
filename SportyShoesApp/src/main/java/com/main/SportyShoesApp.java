@@ -1,13 +1,13 @@
-package com.main.SportyShoesApp;
+package com.main;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SportyShoesAppApplication {
+public class SportyShoesApp {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SportyShoesAppApplication.class, args);
+		SpringApplication.run(SportyShoesApp.class, args);
 		
 	}
 
