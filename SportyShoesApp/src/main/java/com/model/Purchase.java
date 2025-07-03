@@ -1,5 +1,7 @@
 package com.model;
 
+import java.time.LocalDate;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,6 +16,7 @@ private int id;
 	private User user;
 	@ManyToOne
 	private Product product;
+	private LocalDate purchaseDate;
 	public int getId() {
 		return id;
 	}
