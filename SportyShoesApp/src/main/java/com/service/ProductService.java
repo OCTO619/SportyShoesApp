@@ -27,5 +27,10 @@ public class ProductService {
 	public List<Category> getAllCategories(){
 		return categoryRepository.findAll();
 	}
+	public Category addCategory(String name) {
+        Category category = new Category();
+        category.setCname(name);
+        return categoryRepository.save(category);
+    }
 
 }
