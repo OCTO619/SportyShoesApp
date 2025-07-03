@@ -35,5 +35,11 @@ private int id;
 	public void setProduct(Product product) {
 		this.product = product;
 	}
+	public LocalDate getPurchaseDate() {
+		return purchaseDate;
+	}
+	public void setPurchaseDate(LocalDate purchaseDate) {
+		this.purchaseDate = purchaseDate;
+	}
 
 }
