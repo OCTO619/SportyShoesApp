@@ -10,5 +10,5 @@ import com.model.Purchase;
 
 public interface PurchaseRepository extends JpaRepository<Purchase, Integer> {
     List<Purchase> findByPurchaseDateBetween(LocalDate start, LocalDate end);
-    List<Purchase> findByProduct_Category_Name(String categoryName);
+    List<Purchase> findByProduct_Category_Cname(String categoryName);
 }

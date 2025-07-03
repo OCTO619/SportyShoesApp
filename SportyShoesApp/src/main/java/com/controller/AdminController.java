@@ -3,6 +3,8 @@ package com.controller;
 import java.time.LocalDate;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
@@ -54,6 +56,33 @@ public class AdminController {
              return "admin-login";
     		}
     }
+    @GetMapping("/admin/change-password")
+    public String showChangePasswordForm() {
+        return "change-password";
+    }
+
+    @PostMapping("/admin/change-password")
+    public String changePassword(@RequestParam String currentPassword,@RequestParam String newPassword,Model model,HttpSession session) {
+        String username = (String) session.getAttribute("adminUsername");
+
+        if (username == null) {
+            return "redirect:/admin/login";
+        }
+
+        Admin admin = adminService.findByUsername(username);
+
+        if (admin == null || !admin.getPassword().equals(currentPassword)) {
+            model.addAttribute("error", "Invalid current password.");
+            return "change-password";
+        }
+
+        admin.setPassword(newPassword);
+        adminService.updateAdmin(admin);
+
+        model.addAttribute("success", "Password changed successfully!");
+        return "change-password";
+    }
+
     @GetMapping("/products")
     public String showProductPage(Model model) {
     	model.addAttribute("products", productService.getAllProducts());

@@ -20,7 +20,7 @@ public class PurchaseService {
 		return purchaseRepository.findByPurchaseDateBetween(start,end);
 	}
 	public List<Purchase> filterByCategory(String categoryName){
-		return purchaseRepository.findByProduct_Category_Name(categoryName);
+		return purchaseRepository.findByProduct_Category_Cname(categoryName);
 	}
 	
 }
