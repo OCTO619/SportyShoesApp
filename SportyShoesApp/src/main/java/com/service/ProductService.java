@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.model.Category;
 import com.model.Product;
 import com.repository.CategoryRepository;
 import com.repository.ProductRepository;
@@ -21,6 +22,9 @@ public class ProductService {
 	}
 	public void deleteProduct(int pid) {
 		 productRepository.deleteById(pid);
+	}
+	public List<Category> getAllCategories(){
+		return categoryRepository.findAll();
 	}
 
 }
