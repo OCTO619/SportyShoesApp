@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Purchase Reports</title>
+</head>
+<body>
+    <h2>Purchase Reports</h2>
+
+    <form th:action="@{/admin/reports}" method="get">
+        <label>Start Date:</label>
+        <input type="date" name="startDate"><br>
+        <label>End Date:</label>
+        <input type="date" name="endDate"><br>
+        <label>Category:</label>
+        <input type="text" name="category"><br>
+        <button type="submit">Filter</button>
+    </form>
+
+    <table border="1">
+        <tr>
+            <th>User</th><th>Product</th><th>Category</th><th>Date</th>
+        </tr>
+        <tr th:each="p : ${purchases}">
+            <td th:text="${p.user.name}"></td>
+            <td th:text="${p.product.name}"></td>
+            <td th:text="${p.product.category.name}"></td>
+            <td th:text="${p.purchaseDate}"></td>
+        </tr>
+    </table>
+</body>
+</html>

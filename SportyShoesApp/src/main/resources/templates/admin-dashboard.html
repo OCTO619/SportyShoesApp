@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    <h2>Welcome Admin</h2>
+    <ul>
+        <li><a th:href="@{/admin/products}">Manage Products</a></li>
+        <li><a th:href="@{/admin/users}">Manage Users</a></li>
+        <li><a th:href="@{/admin/reports}">View Purchase Reports</a></li>
+    </ul>
+</body>
+</html>
